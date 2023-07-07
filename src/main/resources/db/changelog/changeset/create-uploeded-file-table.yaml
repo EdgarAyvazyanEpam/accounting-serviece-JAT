@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-uploaded-file
+      author: Edgar
+      changes:
+        - createTable:
+            tableName: uploaded_file
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: file_name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: file_content
+                  type: CLOB
+                  constraints:
+                    nullable: false
+              - column:
+                  name: creation_date
+                  type: DATETIME
+                  constraints:
+                    nullable: false
